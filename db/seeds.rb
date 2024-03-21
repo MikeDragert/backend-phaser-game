@@ -90,3 +90,13 @@ items_data = [
 items_data.each do |item_data|
   Item.create!(item_data)
 end
+
+Player.destroy_all
+
+players_data = [
+  { username: "abcd", email: "abcd@gmail.com", save_point: nil }
+]
+
+players_data.each do |player_data|
+  Player.create!(player_data)
+end
