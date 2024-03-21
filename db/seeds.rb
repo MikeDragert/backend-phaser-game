@@ -1,9 +1,92 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+
+# Clear existing items
+Item.destroy_all
+
+# Seed items
+items_data = [
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Larry", type: 1, has_obtained: false },
+  { name: "Jump Function", type: 2, has_obtained: false},
+  { name: "Size Function", type: 2, has_obtained: false },
+  { name: "Loop Function", type: 2, has_obtained: false },
+  { name: "Something Special Function", type: 2, has_obtained: false },
+  { name: "1", type: 3, has_obtained: false },
+  { name: "2", type: 3, has_obtained: false},
+  { name: "3", type: 3, has_obtained: false},
+  { name: "4", type: 3, has_obtained: false},
+  { name: "5", type: 3, has_obtained: false},
+  { name: "6", type: 3, has_obtained: false},
+  { name: "7", type: 3, has_obtained: false},
+  { name: "8", type: 3, has_obtained: false},
+  { name: "9", type: 3, has_obtained: false},
+  { name: "10", type: 3, has_obtained: false},
+  { name: "+", type: 4, has_obtained: false},
+  { name: "-", type: 4, has_obtained: false},
+  { name: "*", type: 4, has_obtained: false},
+  { name: "/", type: 4, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false},
+  { name: "coin", type: 5, has_obtained: false}
+]
+
+items_data.each do |item_data|
+  Item.create!(item_data)
+end
