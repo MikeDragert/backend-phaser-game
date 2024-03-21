@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  achievement_id: 1
+  player_id: 1
+  achieved_at: 2024-03-21 16:45:59
+
+two:
+  achievement_id: 1
+  player_id: 1
+  achieved_at: 2024-03-21 16:45:59

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_id: 1
+  score: 1
+  time: 2024-03-21 16:47:50
+
+two:
+  player_id: 1
+  score: 1
+  time: 2024-03-21 16:47:50
