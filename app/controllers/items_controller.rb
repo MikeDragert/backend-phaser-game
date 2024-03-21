@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
   def index 
-    head :ok
+    render json: Item.all
   end
 end
