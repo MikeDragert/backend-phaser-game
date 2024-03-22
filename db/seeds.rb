@@ -100,3 +100,21 @@ players_data = [
 players_data.each do |player_data|
   Player.create!(player_data)
 end
+
+
+PlayerItem.destroy_all
+
+player_items_data = [
+{ player_id: 1,
+  item_id: 163,
+  save_id: 1,
+  container_item_id: 1,
+  location_x: 1,
+  location_y: 1,
+  map_id: 'STARTITEM'
+}
+]
+
+player_items_data.each do |player_item|
+  PlayerItem.create!(player_item)
+end
