@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2024_03_22_074817) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,10 +21,25 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_074817) do
 
   create_table "highscores", id: :serial, force: :cascade do |t|
     t.bigint "player_id"
+=======
+ActiveRecord::Schema[7.1].define(version: 2024_03_21_205200) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "highscores", force: :cascade do |t|
+    t.integer "player_id"
+>>>>>>> 4db4e55ef38f6d923386d5768f239e094d3969a0
     t.integer "score"
     t.datetime "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.index ["player_id"], name: "index_highscores_on_player_id"
   end
 
@@ -45,12 +61,36 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_074817) do
     t.bigint "player_id"
     t.bigint "item_id"
     t.bigint "save_id"
+=======
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.integer "item_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_achievements", force: :cascade do |t|
+    t.integer "achievement_id"
+    t.integer "player_id"
+    t.datetime "achieved_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_items", force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "item_id"
+    t.integer "save_id"
+>>>>>>> 4db4e55ef38f6d923386d5768f239e094d3969a0
     t.integer "container_item_id"
     t.integer "location_x"
     t.integer "location_y"
     t.integer "map_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.index ["item_id"], name: "index_player_items_on_item_id"
     t.index ["player_id"], name: "index_player_items_on_player_id"
     t.index ["save_id"], name: "index_player_items_on_save_id"
@@ -59,19 +99,33 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_074817) do
   create_table "players", id: :serial, force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+=======
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "username"
+>>>>>>> 4db4e55ef38f6d923386d5768f239e094d3969a0
     t.string "email"
     t.integer "save_point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
  
   end
 
   create_table "saves", id: :serial, force: :cascade do |t|
     t.bigint "player_id"
+=======
+  end
+
+  create_table "saves", force: :cascade do |t|
+    t.integer "player_id"
+>>>>>>> 4db4e55ef38f6d923386d5768f239e094d3969a0
     t.integer "save_point"
     t.boolean "current"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.index ["player_id"], name: "index_saves_on_player_id"
   end
 
@@ -82,4 +136,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_074817) do
   add_foreign_key "player_items", "players"
   add_foreign_key "player_items", "saves", column: "save_id"
   add_foreign_key "saves", "players"
+=======
+  end
+
+>>>>>>> 4db4e55ef38f6d923386d5768f239e094d3969a0
 end
