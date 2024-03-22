@@ -31,7 +31,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_205200) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "item_type"
-    t.boolean "has_obtained"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
