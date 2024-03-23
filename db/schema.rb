@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_22_074817) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_23_214131) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_074817) do
   create_table "player_items", id: :serial, force: :cascade do |t|
     t.bigint "player_id"
     t.bigint "item_id"
-    t.bigint "save_id"
+    t.bigint "player_save_id"
     t.integer "container_item_id"
     t.integer "location_x"
     t.integer "location_y"
@@ -53,7 +53,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_074817) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_player_items_on_item_id"
     t.index ["player_id"], name: "index_player_items_on_player_id"
-    t.index ["save_id"], name: "index_player_items_on_save_id"
+    t.index ["player_save_id"], name: "index_player_items_on_player_save_id"
+  end
+
+  create_table "player_saves", id: :serial, force: :cascade do |t|
+    t.bigint "player_id"
+    t.integer "save_point"
+    t.boolean "current"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_player_saves_on_player_id"
   end
 
   create_table "players", id: :serial, force: :cascade do |t|
@@ -63,23 +72,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_074817) do
     t.integer "save_point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
- 
-  end
-
-  create_table "saves", id: :serial, force: :cascade do |t|
-    t.bigint "player_id"
-    t.integer "save_point"
-    t.boolean "current"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["player_id"], name: "index_saves_on_player_id"
   end
 
   add_foreign_key "highscores", "players"
   add_foreign_key "player_achievements", "achievements"
   add_foreign_key "player_achievements", "players"
   add_foreign_key "player_items", "items"
+  add_foreign_key "player_items", "player_saves", column: "player_save_id"
   add_foreign_key "player_items", "players"
-  add_foreign_key "player_items", "saves", column: "save_id"
-  add_foreign_key "saves", "players"
+  add_foreign_key "player_saves", "players"
 end

@@ -1,5 +1,5 @@
 class PlayerItem < ApplicationRecord
-  # belongs_to :save
+  belongs_to :player_save
   belongs_to :item
 
   scope :item_join, ->{ 
@@ -10,7 +10,7 @@ class PlayerItem < ApplicationRecord
   # @player_item_item = PlayerItem.player_item_item
 
   def self.player_item_item
-    item_join.select('player_items.*, items.name as item_name, items.type as item_type')
+    item_join.select('player_items.*, items.name as item_name, items.item_type as item_type')
   end
 
 end

@@ -34,7 +34,7 @@ Player.destroy_all
 
 # Seed players
 players_data = [
-  { username: "abcd", email: "abcd@gmail.com", save_point: nil }
+  { username: "abcd", email: "abcd@gmail.com", password: '1234', password_confirmation: '1234', save_point: nil }
 ]
 
 players_data.each do |player_data|
@@ -48,18 +48,18 @@ saves_data = [
 ]
 
 saves_data.each do |save_data|
-  Save.create!(save_data)
+  PlayerSave.create!(save_data)
 end
 
 # Seed player items
 item = Item.find_by(name: "Larry")
-save = Save.find_by(player_id: player.id)
+save = PlayerSave.find_by(player_id: player.id)
 
 if player && item && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: item.id,
-    save_id: save.id,
+    player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
     location_y: 1,
