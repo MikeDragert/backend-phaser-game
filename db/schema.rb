@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_21_204952) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_22_074817) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,11 +58,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_204952) do
 
   create_table "players", id: :serial, force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.string "email"
     t.integer "save_point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+ 
   end
 
   create_table "saves", id: :serial, force: :cascade do |t|
