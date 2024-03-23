@@ -10,7 +10,7 @@ class PlayerItem < ApplicationRecord
   # @player_item_item = PlayerItem.player_item_item
 
   def self.player_item_item
-    item_join.select('player_items.*, items.name as item_name, items.type as item_type, items.has_obtained')
+    item_join.select('player_items.*, items.name as item_name, items.type as item_type')
   end
 
 end
