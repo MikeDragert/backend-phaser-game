@@ -1,10 +1,9 @@
 class CreateHighscores < ActiveRecord::Migration[7.1]
   def change
-    create_table :highscores do |t|
-      t.integer :player_id
-      t.integer :score
-      t.datetime :time
-
+    create_table :highscores, id: :serial do |t|
+      t.references :player, foreign_key: true
+      t.integer "score"
+      t.datetime "time"
       t.timestamps
     end
   end

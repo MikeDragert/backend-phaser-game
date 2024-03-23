@@ -1,11 +1,10 @@
 class CreatePlayerAchievements < ActiveRecord::Migration[7.1]
   def change
-    create_table :player_achievements do |t|
-      t.integer :achievement_id
-      t.integer :player_id
-      t.datetime :achieved_at
-
-      t.timestamps
+    create_table :player_achievements, id: :serial do |t|
+      t.references :achievement, foreign_key: true
+      t.references :player, foreign_key: true
+      t.datetime "achieved_at"
+      t.datetime "created_at", null: false
     end
   end
 end

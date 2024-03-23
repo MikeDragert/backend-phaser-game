@@ -14,40 +14,34 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_205200) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "achievements", force: :cascade do |t|
+  create_table "achievements", id: :serial, force: :cascade do |t|
     t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+
   end
 
-  create_table "highscores", force: :cascade do |t|
-    t.integer "player_id"
+  create_table "highscores", id: :serial, force: :cascade do |t|
+    t.references :player, foreign_key: true
     t.integer "score"
     t.datetime "time"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
-  create_table "items", force: :cascade do |t|
+  create_table "items", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "item_type"
-
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
-  create_table "player_achievements", force: :cascade do |t|
-    t.integer "achievement_id"
-    t.integer "player_id"
+  create_table "player_achievements", id: :serial, force: :cascade do |t|
+    t.references :achievement, foreign_key: true
+    t.references :player, foreign_key: true
     t.datetime "achieved_at"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
-  create_table "player_items", force: :cascade do |t|
-    t.integer "player_id"
-    t.integer "item_id"
-    t.integer "save_id"
+  create_table "player_items", id: :serial, force: :cascade do |t|
+    t.references :player, foreign_key: true
+    t.references :item, foreign_key: true
+    t.references :save, foreign_key: true
     t.integer "container_item_id"
     t.integer "location_x"
     t.integer "location_y"
@@ -56,7 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_205200) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "players", force: :cascade do |t|
+  create_table "players", id: :serial, force: :cascade do |t|
     t.string "username"
     t.string "password"
     t.string "email"
@@ -65,12 +59,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_205200) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "saves", force: :cascade do |t|
-    t.integer "player_id"
+  create_table "saves", id: :serial, force: :cascade do |t|
+    t.references :player, foreign_key: true
     t.integer "save_point"
     t.boolean "current"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
