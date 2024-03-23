@@ -3,9 +3,9 @@
 one:
   name: MyString
   type: 1
-  has_obtained: false
+
 
 two:
   name: MyString
   type: 1
-  has_obtained: false
+
