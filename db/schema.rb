@@ -10,20 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_21_205200) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_21_204952) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "achievements", id: :serial, force: :cascade do |t|
     t.string "title"
-
   end
 
   create_table "highscores", id: :serial, force: :cascade do |t|
-    t.references :player, foreign_key: true
+    t.bigint "player_id"
     t.integer "score"
     t.datetime "time"
     t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_highscores_on_player_id"
   end
 
   create_table "items", id: :serial, force: :cascade do |t|
@@ -32,22 +33,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_205200) do
   end
 
   create_table "player_achievements", id: :serial, force: :cascade do |t|
-    t.references :achievement, foreign_key: true
-    t.references :player, foreign_key: true
+    t.bigint "achievement_id"
+    t.bigint "player_id"
     t.datetime "achieved_at"
     t.datetime "created_at", null: false
+    t.index ["achievement_id"], name: "index_player_achievements_on_achievement_id"
+    t.index ["player_id"], name: "index_player_achievements_on_player_id"
   end
 
   create_table "player_items", id: :serial, force: :cascade do |t|
-    t.references :player, foreign_key: true
-    t.references :item, foreign_key: true
-    t.references :save, foreign_key: true
+    t.bigint "player_id"
+    t.bigint "item_id"
+    t.bigint "save_id"
     t.integer "container_item_id"
     t.integer "location_x"
     t.integer "location_y"
     t.integer "map_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_player_items_on_item_id"
+    t.index ["player_id"], name: "index_player_items_on_player_id"
+    t.index ["save_id"], name: "index_player_items_on_save_id"
   end
 
   create_table "players", id: :serial, force: :cascade do |t|
@@ -60,10 +66,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_205200) do
   end
 
   create_table "saves", id: :serial, force: :cascade do |t|
-    t.references :player, foreign_key: true
+    t.bigint "player_id"
     t.integer "save_point"
     t.boolean "current"
     t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_saves_on_player_id"
   end
 
+  add_foreign_key "highscores", "players"
+  add_foreign_key "player_achievements", "achievements"
+  add_foreign_key "player_achievements", "players"
+  add_foreign_key "player_items", "items"
+  add_foreign_key "player_items", "players"
+  add_foreign_key "player_items", "saves", column: "save_id"
+  add_foreign_key "saves", "players"
 end

@@ -41,17 +41,28 @@ players_data.each do |player_data|
   Player.create!(player_data)
 end
 
-# Clear existing player items
-PlayerItem.destroy_all
-
-# Seed player items
-player_items_data = [
-  { player_id: 1, item_id: 19, save_id: 1, container_item_id: 1, location_x: 1, location_y: 1, map_id: 'STARTITEM' }
+# Seed saves
+player = Player.find_by(username: "abcd")
+saves_data = [
+  { player: player, save_point: 1, current: true }
 ]
 
-player_items_data.each do |player_item_data|
-  # Find the corresponding item
-  item = Item.find(player_item_data[:item_id])
-  # Create player item if item exists
-  PlayerItem.create!(player_item_data) if item
+saves_data.each do |save_data|
+  Save.create!(save_data)
+end
+
+# Seed player items
+item = Item.find_by(name: "Larry")
+save = Save.find_by(player_id: player.id)
+
+if player && item && save
+  PlayerItem.create!(
+    player_id: player.id,
+    item_id: item.id,
+    save_id: save.id,
+    container_item_id: 1,
+    location_x: 1,
+    location_y: 1,
+    map_id: 'STARTITEM'
+  )
 end
