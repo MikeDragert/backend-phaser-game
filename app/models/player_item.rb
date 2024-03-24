@@ -7,10 +7,14 @@ class PlayerItem < ApplicationRecord
            ON items.id = player_items.item_id") 
   }
 
-  # @player_item_item = PlayerItem.player_item_item
-
   def self.player_item_item
     item_join.select('player_items.*, items.name as item_name, items.item_type as item_type')
   end
+
+  def self.player_item_item_for_save(player_save_id)
+    item_join.select('player_items.*, items.name as item_name, items.item_type as item_type').where(["player_save_id = ?", player_save_id])
+  end
+
+  
 
 end
