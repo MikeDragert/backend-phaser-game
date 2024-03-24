@@ -1,5 +1,6 @@
 class HighscoresController < ApplicationController
   def index
-    render json: Highscore.all
+    highscores = Highscore.order(score: :desc)
+    render json: highscores
   end
 end
