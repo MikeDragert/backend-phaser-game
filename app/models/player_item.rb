@@ -15,6 +15,9 @@ class PlayerItem < ApplicationRecord
     item_join.select('player_items.*, items.name as item_name, items.item_type as item_type').where(["player_save_id = ?", player_save_id])
   end
 
-  
+  def self.create_new(player_item_data)
+    new_player_item = PlayerItem.create(player_item_data)
+    return new_player_item
+  end
 
 end

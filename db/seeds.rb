@@ -26,7 +26,7 @@ items_data = [
   { name: "Operator_*", item_type: 2 },
   { name: "Operator_/", item_type: 2 },
   { name: "Operator_%", item_type: 2 },
-  { name: "coin", item_type: 11 },
+  { name: "Coin", item_type: 11 },
 ]
 
 items_data.each do |item_data|
@@ -78,7 +78,7 @@ itemOMinus = Item.find_by(name: "Operator_-")
 itemOMult = Item.find_by(name: "Operator_*")
 itemODiv = Item.find_by(name: "Operator_/")
 itemOMod = Item.find_by(name: "Operator_%")
-itemCoin = Item.find_by(name: "coin")
+itemCoin = Item.find_by(name: "Coin")
 
 
 save = PlayerSave.find_by(player_id: player.id)
