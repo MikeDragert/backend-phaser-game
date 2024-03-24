@@ -10,7 +10,8 @@ class PlayerSavesController < ApplicationController
 
   def create
     player = Player.find(params[:player_id])
-    player_save = PlayerSave.create(player: player)
+    save_point = params[:save_point]
+    player_save = PlayerSave.create(player: player, save_point: save_point)
     render json: player_save
   end
 
