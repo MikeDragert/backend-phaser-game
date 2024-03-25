@@ -3,6 +3,7 @@ class CreateItems < ActiveRecord::Migration[7.1]
     create_table :items, id: :serial do |t|
       t.string "name"
       t.integer "item_type"
+      t.integer "score"
     end
   end
 end
