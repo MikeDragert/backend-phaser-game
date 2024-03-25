@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   # Login and Register Routes
   post '/login', to: 'sessions#create'
  
+  #score Routes
+  get '/players/scores', to: 'players#calculate_scores'
 end
