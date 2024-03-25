@@ -20,11 +20,22 @@ class PlayersController < ApplicationController
     else
       render json: @player.errors, status: :unprocessable_entity
     end
-  end
+
+    def calculate_scores
+      scores = Player.all.map do |player|
+        { player_id: player.id, score: player.items.sum(:score) }
+      end
+    
+      sorted_scores = scores.sort_by { |score| score[:score] }.reverse
+    
+      render json: sorted_scores
+    end
 
   private
 
   def player_params
     params.require(:player).permit(:username, :email, :password)
   end
+
+  
 end
