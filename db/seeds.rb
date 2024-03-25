@@ -87,6 +87,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemLarry.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -96,6 +97,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemLarry.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -105,6 +107,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemJump.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -114,6 +117,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemSize.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -123,6 +127,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemPassKey.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -132,6 +137,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemN1.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -141,6 +147,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemN2.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -150,6 +157,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemN3.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -159,6 +167,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemN4.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -168,6 +177,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemN5.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -177,6 +187,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemN6.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -186,6 +197,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemN7.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -195,6 +207,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemN8.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -204,6 +217,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemN9.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -213,6 +227,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemN10.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -222,6 +237,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemOPlus.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -231,6 +247,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemOMinus.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -240,6 +257,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemODiv.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -249,6 +267,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemOMult.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -258,6 +277,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemOMod.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -267,6 +287,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemCoin.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -276,6 +297,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemCoin.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -285,6 +307,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemCoin.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -294,6 +317,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemCoin.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
@@ -303,6 +327,7 @@ if player && save
   PlayerItem.create!(
     player_id: player.id,
     item_id: itemCoin.id,
+    unique_item_name: "",
     player_save_id: save.id,
     container_item_id: 1,
     location_x: 1,
