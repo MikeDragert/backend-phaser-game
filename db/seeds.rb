@@ -3,6 +3,18 @@ PlayerItem.destroy_all
 PlayerSave.destroy_all
 Player.destroy_all
 Item.destroy_all
+Achievement.destroy_all
+
+# Seed achievements
+achievements_data = [
+  { title: "Ooh, a piece of candy!", description: "Collect your first coin" },
+  { title: "Labber", description: "Complete the tutorial" },
+  { title: "Larry", description: "Find Larry on Level 1" },
+]
+
+achievements_data.each do |achievement_data|
+  Achievement.create!(achievement_data)
+end
 
 # Seed items
 items_data = [
