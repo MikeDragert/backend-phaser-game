@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_25_013938) do
   create_table "items", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "item_type"
+    t.integer "score"
   end
 
   create_table "player_achievements", id: :serial, force: :cascade do |t|
