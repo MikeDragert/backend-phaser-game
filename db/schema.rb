@@ -16,6 +16,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_25_013938) do
 
   create_table "achievements", id: :serial, force: :cascade do |t|
     t.string "title"
+    t.string "description"
   end
 
   create_table "highscores", id: :serial, force: :cascade do |t|
