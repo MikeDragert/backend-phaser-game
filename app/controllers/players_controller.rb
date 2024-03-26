@@ -24,7 +24,7 @@ class PlayersController < ApplicationController
 
   def calculate_scores
     scores = Player.all.map do |player|
-      { player_id: player.id, score: player.items.sum(:score) }
+      { player_id: player.id, username: player.username, score: player.items.sum(:score) }
     end
 
     sorted_scores = scores.sort_by { |score| score[:score] }.reverse
