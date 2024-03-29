@@ -30,21 +30,6 @@ The Workbench where you change your functions:
 
 ![WorkBench](https://github.com/Jonas-Kunz/Phaser-react-template/blob/main/docs/Workbench22.png)
 
-
-## Phaser React Template
-
-This is a Phaser 3 project template that uses the React framework and Vite for bundling. It includes a bridge for React to Phaser game communication, hot-reloading for quick development workflow and scripts to generate production-ready builds.
-
-**[This Template is also available as a TypeScript version.](https://github.com/phaserjs/template-react-ts)**
-
-### Versions
-
-This template has been updated for:
-
-- [Phaser 3.80.1](https://github.com/phaserjs/phaser)
-- [React 18.2.0](https://github.com/facebook/react)
-- [Vite 5.1.4](https://github.com/vitejs/vite)
-
 ## Requirements
 
 - Ruby on Rails
@@ -55,9 +40,13 @@ This template has been updated for:
 ## How to install
 
 - Clone this Repo
-- Run Npm install
-- Run with ```npm run dev```
-- Go [here](https://github.com/GardRyan/backend-phaser-game) for our backend repository.
+- bundle install
+- setup .env file with database information
+- bin/rails db:reset
+- bin/rails db:migrate
+- bin/rails db:seed
+- Run with ```rails s```
+- Go [here](https://github.com/Jonas-Kunz/Phaser-react-template) for our frontend repository.
 
 ## Available Commands
 
